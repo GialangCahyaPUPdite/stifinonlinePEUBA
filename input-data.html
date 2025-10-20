@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Input Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- LOADING 5 DETIK -->
+    <div id="loading-section" class="d-flex flex-column justify-content-center align-items-center vh-100">
+      <img src="./assets/img/logo.png" alt="logo" class="logo mb-3" />
+      <div class="progress w-50">
+        <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+      </div>
+    </div>
+
+    <!-- FORM INPUT -->
+    <div id="input-section" class="container d-none">
+      <div class="card form-card p-4">
+        <h3 class="text-center mb-3">Input Data Peserta</h3>
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Nama</label>
+            <input id="nama" class="form-control" type="text" />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Usia</label>
+            <input id="usia" class="form-control" type="number" min="0" />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Jenis Kelamin</label>
+            <select id="jk" class="form-select">
+              <option value="">Pilih...</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Kode Peserta (Opsional)</label>
+            <input id="kode" class="form-control" type="text" />
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <button id="lanjut-btn" class="btn btn-primary" disabled>Lanjut</button>
+        </div>
+      </div>
+
+      <!-- SIDIK JARI -->
+      <div id="sidikjari-section" class="mt-4 d-none">
+        <h5 class="text-center mb-3">Input Sidik Jari</h5>
+        <div class="row g-3 justify-content-center" id="finger-grid">
+          <!-- 5 jari -->
+          <div class="col-6 col-md-4 col-lg-2 finger" data-finger="1">
+            <p>Jempol</p>
+            <img src="./assets/img/J1B.png" id="img1" class="finger-img" /><button class="btn btn-outline-primary btn-sm mt-2 rekam-btn">REKAM</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 finger" data-finger="2">
+            <p>Telunjuk</p>
+            <img src="./assets/img/J2B.png" id="img2" class="finger-img" /><button class="btn btn-outline-primary btn-sm mt-2 rekam-btn">REKAM</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 finger" data-finger="3">
+            <p>Tengah</p>
+            <img src="./assets/img/J3B.png" id="img3" class="finger-img" /><button class="btn btn-outline-primary btn-sm mt-2 rekam-btn">REKAM</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 finger" data-finger="4">
+            <p>Manis</p>
+            <img src="./assets/img/J4B.png" id="img4" class="finger-img" /><button class="btn btn-outline-primary btn-sm mt-2 rekam-btn">REKAM</button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 finger" data-finger="5">
+            <p>Kelingking</p>
+            <img src="./assets/img/J5B.png" id="img5" class="finger-img" /><button class="btn btn-outline-primary btn-sm mt-2 rekam-btn">REKAM</button>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button id="simpan-btn" class="btn btn-success d-none">SIMPAN</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-3">
+          <p class="mb-3 fw-semibold">Apakah data sudah benar?</p>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button id="confirmYes" class="btn btn-primary">Benar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Proses -->
+    <div class="modal fade" id="processModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div id="processText" class="h5 mb-3">TEMPELKAN JARI</div>
+          <div id="processProgress" class="progress d-none">
+            <div id="processBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/input.js"></script>
+  </body>
+</html>

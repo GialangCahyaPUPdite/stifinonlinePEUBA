@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cetak Data Peserta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="p-5 bg-light">
+    <div class="container">
+      <div class="card p-4 shadow-lg">
+        <h3 class="text-center mb-4">Data Peserta</h3>
+        <div id="print-data" class="mb-4"></div>
+        <h5 class="text-center mb-3">Sidik Jari Terekam</h5>
+        <div id="print-fingers" class="d-flex flex-wrap justify-content-center gap-3 mb-4"></div>
+        <div class="text-center">
+          <button onclick="window.print()" class="btn btn-primary">Cetak</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const data = JSON.parse(sessionStorage.getItem('formData') || '{}');
+      const printData = document.getElementById('print-data');
+      const fingers = JSON.parse(sessionStorage.getItem('recordedFlags') || '{}');
+
+      let html = `
+      <p><strong>Nama:</strong> ${data.nama || '-'}</p>
+      <p><strong>Usia:</strong> ${data.usia || '-'}</p>
+      <p><strong>Jenis Kelamin:</strong> ${data.jk || '-'}</p>
+      <p><strong>Kode Peserta:</strong> ${data.kode || '-'}</p>
+    `;
+      printData.innerHTML = html;
+
+      const fingerWrap = document.getElementById('print-fingers');
+      for (let i = 1; i <= 5; i++) {
+        const src = sessionStorage.getItem('finger_' + i) || `./assets/img/J${i}B.png`;
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = 'finger-img';
+        fingerWrap.appendChild(img);
+      }
+    </script>
+  </body>
+</html>
