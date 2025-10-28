@@ -4,7 +4,6 @@ Sistem web simulasi perekaman sidik jari peserta.
 
 - Data sementara disimpan di `sessionStorage`
 - Hilang otomatis setelah dicetak atau halaman direfresh
-- Dapat di-upload ke GitHub Pages tanpa backend
 
 ## Struktur Folder
 
@@ -14,3 +13,4 @@ Lihat di atas untuk struktur lengkap.
 
 - **Username:** admin
 - **Password:** admin123
+
