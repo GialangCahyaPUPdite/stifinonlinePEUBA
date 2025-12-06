@@ -1,3 +1,5 @@
+# Sebelum di gunakan pastikan sudah di unduh dan Install App
+
 # Fingerprint Data System (Versi Web)
 
 Sistem web simulasi perekaman sidik jari peserta.
@@ -13,4 +15,5 @@ Lihat di atas untuk struktur lengkap.
 
 - **Username:** admin
 - **Password:** admin123
+
 
