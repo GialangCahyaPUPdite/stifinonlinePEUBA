@@ -11,9 +11,14 @@ Sistem web simulasi perekaman sidik jari peserta.
 
 Lihat di atas untuk struktur lengkap.
 
+## Cara pengunaan secara live
+
+https://gialangcahyapupdite.github.io/stifinonlinePEUBA/
+
 ## Akun Login
 
 - **Username:** admin
 - **Password:** admin123
+
 
 
